@@ -1,0 +1,73 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver 1.0</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        form {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Silver 1.0!</h1>
+    <p>Enter a URL below to begin your journey:</p>
+    <form id="proxyForm" autocomplete="off">
+        <input id="site" type="text" placeholder="https://example.net">
+        <input type="submit" value="Search">
+    </form>
+    <script>
+        document.getElementById('proxyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const siteInput = document.getElementById('site').value.trim();
+            const baseUrl = 'https://www.zerotoone.com.br/wp-content/plugins/super-links/application/helpers/super-links-proxy.php?';
+            const url = siteInput ? baseUrl + encodeURIComponent(siteInput) : baseUrl + 'https://example.net';
+            window.location.href = url;
+        });
+    </script>
+
+
+</body></html>
